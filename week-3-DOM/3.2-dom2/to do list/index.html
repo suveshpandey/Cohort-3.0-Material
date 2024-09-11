@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List | Suvesh Pandey</title>
+</head>
+<body class="bg-slate-950 text-[white] flex flex-col min-h-screen items-center mt-[100px]">
+    <h1 class="font-semibold text-[30px] mb-[20px]">Todo</h1>
+    <div class="container grid grid-cols-[70%_30%] min-h-10 sm:w-[600px] w-[90%] border-[2px] border-[gray] rounded-md bg-slate-900">
+        <input id="input" type="text" placeholder="Enter the task . . ." class="w-full h-full rounded-md rounded-r-none bg-slate-800 text-[#d2d2d2] text-[17px] py-1 outline-none px-3 hover:bg-slate-900 hover:border-[#999898] transition-all duration-300">
+        <button id="addBtn" onclick="addTask()" class=" bg-blue-900 font-semibold rounded-md w-full py-1 text-[#d9dad9] rounded-l-none outline-none hover:bg-[#03c44d] transition-all duration-300">Add Task</button>
+    </div>
+    <div id="tasks" class="container flex flex-col min-h-10 mt-[20px] justify-center sm:w-[600px] w-[90%] border-[2px] border-[gray] rounded-md bg-slate-900 text-[#d2d2d2]"></div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

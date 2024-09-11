@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgb(179, 217, 250);
+
+    background-color: #090e1c;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #59637e;
+}
+.inputForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.inputForm{
+    width: 500px;
+    height: 70px;
+    padding: 10px;
+}
+#inputBox{
+    width: 70%;;
+    height: 35px;
+    outline: none;
+}
+#addBtn{
+    width: 30%;
+    height: 40px;
+}
+#task{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+}

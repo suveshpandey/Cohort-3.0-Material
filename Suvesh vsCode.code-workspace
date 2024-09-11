@@ -1,0 +1,25 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "C:/Users/HP/OneDrive/Desktop/javascript"
+        },
+        {
+            "path": "C:/Users/HP/OneDrive/Desktop/React JS"
+        },
+        {
+            "path": "C:/Users/HP/OneDrive/Desktop/FE Projects"
+        },
+        {
+            "path": "C:/Users/HP/OneDrive/Desktop/pythonProgramming"
+        },
+        {
+            "path": "C:/Users/HP/OneDrive/Desktop/c++"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "Cohort 3.0"
+    }
+}

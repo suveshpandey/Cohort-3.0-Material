@@ -1,0 +1,1 @@
+hye, I have added thing using the fs.writeFile funtion as an assignment.

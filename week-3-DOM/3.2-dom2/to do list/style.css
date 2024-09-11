@@ -1,0 +1,11 @@
+/* Default padding for larger screens */
+button {
+    padding: 5px 20px; /* Padding for larger screens and landscape mode */
+}
+
+/* Padding for mobile devices (portrait mode) */
+@media (max-width: 420px) and (orientation: portrait) {
+    button {
+        padding: 1px; /* Adjust padding for portrait mode on small devices */
+    }
+}
