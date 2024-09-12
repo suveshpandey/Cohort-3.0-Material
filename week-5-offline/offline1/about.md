@@ -1,0 +1,1 @@
+## We will be lerning the Map, Filter, and Arrow function in this lecture.
