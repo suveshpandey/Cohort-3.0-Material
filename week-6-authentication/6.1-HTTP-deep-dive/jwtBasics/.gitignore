@@ -1,0 +1,5 @@
+node_modules/
+
+# git rm -r --cached node_modules
+# git commit -m "Remove node_modules from repository"
+# git push origin <branch-name>
