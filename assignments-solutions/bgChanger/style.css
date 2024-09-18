@@ -2,8 +2,16 @@ body {
     padding: 0px;
     margin: 0px;
 }
-.app-container {
+#app-container {
     height: 100vh;
     width: 100%;
-    background: #000;
+    background: #9accee;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+#btnContainer{
+    margin-top: 30px;
 }
