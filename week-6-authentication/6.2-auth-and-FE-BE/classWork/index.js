@@ -25,7 +25,7 @@ function authForMe(req, res, next){
         next();
     }
     else{
-        json.status(404).json({msg: "you are not loggen in."})
+        res.status(404).json({msg: "you are not loggen in."})
     }
 }
 //? returning html file:
@@ -51,7 +51,7 @@ app.post('/signin', (req, res)=>{
     const username = req.body.username;
     const passward = req.body.passward;
 
-    const foundUser = users.find(user => user.username == username && user.passward == passward);
+    let foundUser = users.find(user => user.username == username && user.passward == passward);
     if(foundUser){
         const token = jwt.sign({
             username
