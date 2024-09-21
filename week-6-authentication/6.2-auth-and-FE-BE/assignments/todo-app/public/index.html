@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="login-container">
+        <div class="signup">
+            <h2>SignUp</h2>
+            <br>
+            <input type="text" id="signup-username" placeholder="Enter your username ...">
+            <input type="password" id="signup-password" placeholder="Enter a hard password ...">
+            <button id="signup-btn" onclick="signup()">SignUp</button>
+        </div>
+        <br>
+        <div class="signin" style="display: none;">
+            <h2>SignIn</h2>
+            <br>
+            <input type="text" id="signin-username" placeholder="Enter your username ...">
+            <input type="text" id="signin-password" placeholder="Enter your password ...">
+            <button id="signin-btn" onclick="signin()">SignIn</button>
+        </div>
+        <div class="todosContainer">
+            <h2>Todos</h2>
+            <br>
+            <div class="addTask">
+                <input type="text" id="addTaskInput">
+                <button onClick = "addTask()" id="addTask">Add Task</button>
+            </div>
+            <div class="todos">
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

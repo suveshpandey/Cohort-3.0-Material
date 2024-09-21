@@ -1,0 +1,100 @@
+body{
+    background-color: #020617;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+#login-container{
+    display: flex;
+    flex-direction: column;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: rgb(13, 13, 65);
+}
+#signup-username{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: solid rgb(7, 7, 91) 1px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#signup-password{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: solid rgb(7, 7, 91) 1px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#signup-btn{
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    border: solid blue 1px;
+    background-color: rgb(18, 232, 54);
+    color: rgb(59, 59, 73);
+    font-weight: 700;
+}
+
+.signin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: rgb(13, 13, 65);
+}
+#signin-username{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: solid rgb(7, 7, 91) 1px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#signin-password{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: solid rgb(7, 7, 91) 1px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#signin-btn{
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    border: solid blue 1px;
+    background-color: rgb(18, 232, 54);
+    color: rgb(59, 59, 73);
+    font-weight: 700;
+}
+.todosContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: rgb(13, 13, 65);
+}
