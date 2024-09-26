@@ -1,12 +1,14 @@
 const express = require('express');
-const {userModel} = require('../db')
-const {userAuth} = require('../middlewares/userAuth');
+const {userModel, courseModel} = require('../db')
+const {userSignupAuth, userSigninAuth} = require('../middlewares/userAuth');
 const {purchaseModel} = require('../db');
-const Router = express.Router;
+const jwt = require('jsonwebtoken');
+const { JWT_USER_PASSWORD } = require('../config');
 
+const Router = express.Router;
 const userRouter = Router();
 
-userRouter.post('/signup', userAuth, async (req, res)=>{
+userRouter.post('/signup', userSignupAuth, async (req, res)=>{
     const email = req.body.email;
     const password = req.body.password;
     const firstname = req.body.firstname;
@@ -34,32 +36,47 @@ userRouter.post('/signup', userAuth, async (req, res)=>{
         })
     }
 })
+
+
 userRouter.post('/signin', async (req, res)=>{
     const email = req.body.email;
     const password = req.body.password;
-    const firstname = req.body.firstname;
-    const lastname = req.body.lastname;
 
-    const admin = await adminModel.findOne({
+    const user = await userModel.findOne({
         email: email,
         password: password
     });
-    if(!admin){
+    if(!user){
         res.status(401).json({message: "Invalid credentials."});
     }
     else{
-        res.status(200).json({message: "User signed in successfully."});
+        const token = jwt.sign(
+            {id : user._id},
+            JWT_USER_PASSWORD
+        )
+        res.status(200).json(
+            {
+                message: "User signed in successfully.",
+                token: token
+            }
+        );
     }
 });
-userRouter.get('/show-purchases', async (req, res)=>{
-    const userId = req.body.userId;
+
+
+userRouter.get('/show-purchases', userSigninAuth , async (req, res)=>{
+    const userId = req.userId;
 
     const purchases = await purchaseModel.find({userId});
+    
     if(purchases.length == 0){
         return res.status(404).json({message: "You have not purchased any course yet."});
     }
     else{
-        return res.status(200).send(purchases);
+        const courseData = await courseModel.find({
+            _id : {$in : purchases.map(x => x.courseId)}
+        })
+        return res.status(200).json({purchases, courseData});
     }
 })
 
