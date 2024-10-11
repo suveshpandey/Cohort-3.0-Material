@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
+    <title>Course Selling App</title>
+</head>
+<body class="bg-slate-950 text-white flex justify-center items-center flex-col">
+    <div id="firstBlock" class="h-[50vh] w-[60%] bg-slate-800 mt-[20%] rounded-md border-gray-400 border-[1px] flex flex-col items-center justify-center">
+        <h1 class="font-bold">Sign-up as ?</h1>
+        <div>
+            <button onclick="adminSection()" class="px-3 py-2 bg-gray-400 rounded-lg my-2 text-slate-950 font-semibold">Admin</button>
+            <button onclick="userSection()" class="px-5 py-2 bg-gray-400 rounded-lg my-2 text-slate-950 font-semibold">User</button>
+        </div>
+    </div>
+    <div id="adminSignupSection" class="h-auto w-[500px] mt-10 p-3 bg-slate-800 px-10 flex flex-col items-center rounded-md" style="display: none;">
+        <h1>Admin Signup</h1>
+        <form action="" id="adminSignupForm" class="w-[100%] mt-3 flex flex-col items-center">
+            <input type="text" id="adminSignupEmail" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your email...">
+            <input type="password" id="adminSignupPassword" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your password...">
+            <input type="text" id="adminSignupFirstname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your firstname...">
+            <input type="text" id="adminSignupLastname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your lastname...">
+            <button id="adminSignupBtn" onclick="adminSignup(event)" class="bg-gray-300 w-[50%] h-[40px] rounded-md text-slate-900 font-semibold">SignUp</button>
+        </form>
+    </div>
+    <div id="adminSigninSection" class="h-auto w-[500px] mt-10 p-3 bg-slate-800 px-10 flex flex-col items-center rounded-md" style="display: none;">
+        <h1>Admin SignIn</h1>
+        <form action="" id="adminSigninForm" class="w-[100%] mt-3 flex flex-col items-center">
+            <input type="text" id="adminSigninEmail" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your email...">
+            <input type="password" id="adminSigninPassword" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your password...">
+            <input type="text" id="adminSigninFirstname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your firstname...">
+            <input type="text" id="adminSigninLastname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your lastname...">
+            <button id="adminSigninBtn" onclick="adminSignin(event)" class="bg-gray-300 w-[50%] h-[40px] rounded-md text-slate-900 font-semibold">SignIn</button>
+        </form>
+    </div>
+    <div id="adminCreateCourse" class="flex flex-col mt-10 w-[500px] h-auto p-3 bg-slate-900 rounded-md items-center" style="display: none;">
+        <input type="text" id="title" placeholder="Enter the course title" class="bg-slate-950 h-[50px] w-[100%] rounded-md pl-3 mb-3 outline-none">
+        <textarea type="text" id="description" placeholder="Enter the description"  class="bg-slate-950 w-[100%] rounded-md pl-3 mb-3 outline-none"></textarea>
+        <input type="number" id="price" placeholder="Enter the course price"  class="bg-slate-950 h-[50px] w-[100%] rounded-md pl-3 mb-3 outline-none">
+        <input type="text" id="imageUrl" placeholder="Enter the image url"  class="bg-slate-950 h-[50px] w-[100%] rounded-md pl-3 mb-3 outline-none">
+        <input type="number" id="creatorId" placeholder="Enter the creator/admin id"  class="bg-slate-950 h-[50px] w-[100%] rounded-md pl-3 mb-3 outline-none">
+        <button id="createCourse" onclick="createCourse(event)" class="bg-gray-400 w-[50%] h-[50px] rounded-md text-slate-900 font-semibold">Create Course</button>
+    </div>
+
+    <div id="userSignupSection" class="h-auto w-[500px] mt-10 p-3 bg-slate-800 px-10 flex flex-col items-center rounded-md" style="display: none;">
+        <h1>User Signup</h1>
+        <form action="" id="userSignupForm" class="w-[100%] mt-3 flex flex-col items-center">
+            <input type="text" id="userSignupEmail" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your email...">
+            <input type="password" id="userSignupPassword" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your password...">
+            <input type="text" id="userSignupFirstname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your firstname...">
+            <input type="text" id="userSignupLastname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your lastname...">
+            <button id="userSignupBtn" onclick="userSignup(event)" class="bg-gray-300 w-[50%] h-[40px] rounded-md text-slate-900 font-semibold">SignUp</button>
+        </form>
+    </div>
+    <div id="userSigninSection" class="h-auto w-[500px] mt-10 p-3 bg-slate-800 px-10 flex flex-col items-center rounded-md" style="display: none;">
+        <h1>User SignIn</h1>
+        <form action="" id="userSigninForm" class="w-[100%] mt-3 flex flex-col items-center">
+            <input type="text" id="userSigninEmail" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your email...">
+            <input type="password" id="userSigninPassword" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your password...">
+            <input type="text" id="userSigninFirstname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your firstname...">
+            <input type="text" id="userSigninLastname" class="w-[100%] h-[40px] bg-slate-950 rounded-md px-2 outline-none mb-2" placeholder="Enter your lastname...">
+            <button id="userSigninBtn" onclick="userSignin(event)" class="bg-gray-300 w-[50%] h-[40px] rounded-md text-slate-900 font-semibold">SignIn</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
