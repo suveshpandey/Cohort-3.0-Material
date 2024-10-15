@@ -1,7 +1,5 @@
-// import { useState, useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css'
 
 // function App() {
 //   const [counterVisible, setCounterVisible] = useState(true);
@@ -55,6 +53,37 @@
 
 
 // export default App
-''//1='1///3
 
-//?  explaination od "dependect,"
+
+
+//* Re-learning Cleanup, useEffect. Learning about dependency array.
+function App() {
+    const [count, setCount] = useState(0);
+    function increaseCount(){
+        setCount(count => count + 1);
+    }
+    return(
+        <div>
+            <Counter count={count}></Counter>
+            <button onClick={increaseCount}>IncraseCount</button>
+        </div>
+    )
+}
+function Counter(props){
+    useEffect(function(){
+        console.log("mount");
+
+        return function(){
+            console.log("unmount")
+        }
+    }, []);
+    useEffect(function(){
+        console.log("count changed")
+        return function(){
+            console.log("cleanup inside second effect.")
+        }
+    }, [props.count])
+
+    return <div>Counter {props.count}</div>
+}
+export default App;
