@@ -1,34 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react'
+import {PostComponent} from '../components/Post'
+// function App() {
+//   const [posts, setPosts] = useState([]);
+
+//   const postComponents = posts.map(post => <PostComponent
+//     name={post.name}
+//     subtitle={post.subtitle}
+//     time={post.time}
+//     image={post.image}
+//     description={post.description}
+//   /> )
+
+//   function addpost(){
+//     setPosts([...posts, {
+//       name: "Suvesh Pandey",
+//       subtitle: "160 followers",
+//       time: "2min ago",
+//       image: "https://media.licdn.com/dms/image/D4D03AQHO2aaVD-NAXA/profile-displayphoto-shrink_400_400/0/1716984112032?e=2147483647&v=beta&t=nRSdDYnYeluK-vFfTMc_iZR_0UY_wf_XTUVLAiH_zGM",
+//       description: "How to solve dsa problems?"
+//     }])
+//   }
+//   return(
+//     <div>
+//       <button onClick={addpost}>AddPost</button>
+//       {postComponents}
+//     </div>
+    
+//   )
+// }
+
+// function Toggle(){
+//   const [visible, setVisible] = useState(false);
+//   function changeVisibility(){
+//     setVisible(visible => !visible);
+//   }
+//   return(
+//     <div>
+//       <button onClick={changeVisibility}>change</button>
+//       {visible && <p>Changed the visibilty.</p>}
+//     </div>
+//   )
+// }
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  const [currTab, setCurrTab] = useState('Home');
+  return(
+    <div>
+      <button onClick={() => setCurrTab('Home')} style={{color: currTab == 'Home' ? "red" : "black"}} >Home</button>
+      <button onClick={() => setCurrTab('Notifications')} style={{color: currTab == 'Notifications' ? "red" : "black"}} >Notifications</button>
+      <button onClick={() => setCurrTab('Messages')} style={{color: currTab == 'Messages' ? "red" : "black"}} >Messages</button>
+      <button onClick={() => setCurrTab('Jobssp.cpp')} style={{color: currTab == 'Jobs' ? "red" : "black"}} >Jobs</button>
+    </div>
   )
 }
 
