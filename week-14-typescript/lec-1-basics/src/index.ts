@@ -122,3 +122,7 @@ const teamLead: TeamLead = {
 console.log(teamLead)
 
 //! note - in interface, we don't use =, but in types we use it.
+
+
+const x : number = 10;
+console.log(x);

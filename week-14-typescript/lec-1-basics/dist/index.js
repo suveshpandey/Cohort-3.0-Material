@@ -73,3 +73,6 @@ const teamLead = {
     department: "IT"
 };
 console.log(teamLead);
+//! note - in interface, we don't use =, but in types we use it.
+const x = 10;
+console.log(x);
