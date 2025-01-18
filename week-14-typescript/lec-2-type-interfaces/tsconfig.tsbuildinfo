@@ -1,1 +1,1 @@
-{"root":["./index.ts"],"version":"5.7.3"}
+{"root":["./arrays.ts","./index.ts","./types.ts"],"version":"5.7.3"}
