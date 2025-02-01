@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Make scrollbar thinner */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px; /* Adjust the width as needed */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #d4d0d0; /* Scrollbar color */
+    border-radius: 3px; /* Rounded corners */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #1B2A41; /* Track color */
+}

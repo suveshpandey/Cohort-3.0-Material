@@ -31,8 +31,21 @@ export const CreateContentModal = ({isOpen, onClose, handleAddContent}: ModelPro
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         handleAddContent(contentData);
+        setContentData({
+            title: "",
+            type: "",
+            link: ""
+        });
         onClose();
+        
     }
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+        if(event.key == "Enter"){
+            handleSubmit(event);
+        }
+    }
+
+    //-------------------------------------
     return (
         <div>
             {isOpen && <div className="w-[100%] h-[100vh] absolute top-0 left-0 flex justify-center items-center bg-black bg-opacity-50">
@@ -45,7 +58,7 @@ export const CreateContentModal = ({isOpen, onClose, handleAddContent}: ModelPro
                         <TbPencilCheck className="size-6 ml-2" />
                     </div>
                     <div className="w-[100%] mt-2 flex flex-col ">
-                        <form action="" onSubmit={handleSubmit}>
+                        <form action="" onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
                             <input 
                             type="text"
                             placeholder="title"

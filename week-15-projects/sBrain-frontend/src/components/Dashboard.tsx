@@ -17,7 +17,7 @@ export const Dashboard = () => {
     const [isOpen, setIsopen] = useState(false);
     const [isSideBarOpen, setIsSideBarOpen] = useState(true);
     const [contents, setContents] = useState([
-        { title: "how to crack GSOC", type: "youtube", link: "https://www.youtube.com/watch?v=jyyoo915cGQ&t=211s" },
+        { title: "how to crack GSOC", type: "youtube", link: "https://www.youtube.com/watch?v=jyyoo915cGQ&t=211 s" },
         { title: "my first tweet", type: "twitter", link: "https://x.com/elonmusk/status/1882615180896403499" }
     ]);
 
@@ -34,7 +34,9 @@ export const Dashboard = () => {
     const handleAddContent = (newContent: ContentInterface) => {
         setContents((prevContents) => [...prevContents, newContent])
     }
-
+    const handleDeleteContent = (contentIndex: number) => {
+        setContents((prevContents) => prevContents.filter((_, i) => i != contentIndex))
+    }
 
 
 
@@ -59,6 +61,7 @@ export const Dashboard = () => {
                                 title={content.title}
                                 type={content.type}
                                 link={content.link}
+                                handleDeleteContent={() => handleDeleteContent(index)}
                             />
                             )
                         })
