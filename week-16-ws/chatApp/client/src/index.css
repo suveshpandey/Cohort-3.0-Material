@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Make scrollbar thinner */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px; /* Adjust the width as needed */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #34445c; /* Scrollbar color */
+    border-radius: 3px; /* Rounded corners */
+}
+

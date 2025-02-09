@@ -24,10 +24,6 @@ export const Sidebar = () => {
                     <MdInsertLink className=" text-xl" />
                     <h2>Links</h2>
                 </div>
-                <div className="w-[100%] h-[50px] flex items-center justify pl-10 gap-x-3 rounded-md border-0 hover:bg-[#324a5f] hover:bg-opacity-80 transition-all duration-300 cursor-pointer">
-                    <FaTags className=" text-xl" />
-                    <h2>Tags</h2>
-                </div>
             </div>
         </div>
     )
