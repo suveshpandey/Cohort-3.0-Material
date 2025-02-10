@@ -3,8 +3,8 @@ interface messageType {
 }
 export const MessageBlock = ({message}: messageType) => {
     return (
-        <span className="bg-slate-600 mt-3 px-3 py-2 rounded-full max-w-max rounded-bl-none  ">
+        <div className="bg-slate-600 mt-3 px-3 h-[35px] flex items-center justify-center rounded-full max-w-max rounded-br-none   ">
             {message}
-        </span>
+        </div>
     )
 }

@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"name": "Reactjs",
+			"path": "../../../../../Reactjs"
+		},
+		{
+			"name": "Nodejs",
+			"path": "../../../../../Nodejs"
+		},
+		{
+			"name": "c++",
+			"path": "../../../../../c++"
+		},
+		{
+			"name": "FE Projects",
+			"path": "../../../../../FE Projects"
+		},
+		{
+			"name": "javascript",
+			"path": "../../../../../javascript"
+		},
+		{
+			"name": "Cohort-3.0",
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../BE-Projects"
+		},
+		{
+			"path": "../../../../../React-Projects"
+		},
+		{
+			"path": "../../../../../Open-Source"
+		},
+		{
+			"path": "../../../../../CP-Series"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Cohort-3.0",
+		"files.associations": {
+			"iostream": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}
